@@ -1,12 +1,13 @@
 import React from 'react'
 import Main from './screens/Main'
-import UserContextProvider from './context'
+import LangContextProvider from './context/langContext'
+import translations from './data/translations'
 
 function App() {
   return (
-    <UserContextProvider>
+    <LangContextProvider defaultLang="en" translations={translations}>
       <Main />
-    </UserContextProvider>
+    </LangContextProvider>
   )
 }
 

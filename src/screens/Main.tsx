@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import Header from '../components/Header'
-import { useFns } from '../context'
+import { useSetLang, useT } from '../context/langContext'
 
 const Main = () => {
-  const { logIn, logOut } = useFns()
+  const setLang = useSetLang()
+  const t = useT()
+  console.log('[setLang]', setLang)
+  console.log('[t]', t)
   return (
     <Container>
-      <Header />
-      <Text>Main Screen</Text>
-      <Button onClick={logIn}>Login</Button>
-      <Button onClick={logOut}>Logout</Button>
+      <Text>{t('Hello!')}</Text>
+      <Button onClick={() => setLang('es')}>{t('Translate')}</Button>
     </Container>
   )
 }

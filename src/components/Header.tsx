@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useUser } from '../context'
+import { useUser } from '../context/userContext'
 
 const Header = () => {
   const { name, isLogin } = useUser()
